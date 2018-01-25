@@ -1,0 +1,139 @@
+/* force border box on all elements */
+html {
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+	h1 {
+		font-size: 2rem;
+	}
+}
+
+/* style for all of our buttons or any other elements that may be used as buttons */
+.btn,
+a.button,
+button,
+[type="button"],
+[type="submit"] {
+	display: inline-block;
+	background: #e76c67;
+	border: 1px solid #e76c67;
+	color: white;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.95rem;
+	font-family: "Roboto", sans-serif;
+	padding: 0.5rem 1rem;
+	vertical-align: middle;
+	white-space: nowrap;
+	cursor: pointer;
+	line-height: 1;
+	margin: 0.25rem 0;
+	border-radius: 18px;
+}
+
+.twitter__btn {
+	background: #1e6bd6;
+	border: 1px solid #1e6bd6;
+}
+
+.card {
+	flex: 1 1 50%;
+	position: relative;
+	border: 1px solid #efefef;
+}
+
+.card p {
+	margin: 0 0 30px;
+}
+
+.card--content {
+	padding: 30px 30px;
+}
+
+.card--title {
+	text-align: center;
+}
+
+.card--content {
+	text-align: center;
+	font-family: "Sedgwick Ave", cursive;
+	font-size: 1.75rem;
+}
+
+#author {
+	font-size: 1.25rem;
+}
+.container {
+	margin: 0 auto;
+	padding: 0 10px;
+	max-width: 1000px;
+}
+
+/* The row is basically a clearfix hack; no styling gets applied to this element. It simply exists for you to contain your columns. */
+.row::before,
+.row::after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+.one,
+.one-third,
+.two-thirds,
+.one-fourth,
+.half {
+	width: 100%;
+	border: none;
+}
+
+@media only screen and (min-width: 800px) {
+	.one {
+		width: 100%;
+	}
+	.half {
+		width: calc(100% / 2);
+	}
+	.one-third {
+		width: calc(100% / 3);
+	}
+	.one-fourth {
+		width: calc(100% / 4);
+	}
+	.two-thirds {
+		width: calc(100% / 3 * 2);
+	}
+	.column {
+		float: left;
+	}
+}
+
+#api {
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+}

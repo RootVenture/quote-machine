@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Random Quote Machine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Sedgwick+Ave" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://use.fontawesome.com/40a861773c.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="card one">
+        <h1 class="card--title">My Quote Machine</h1>
+        <div class="card--content">
+
+          <p>
+            <i class="fa fa-quote-left" aria-hidden="true"></i>
+            <span id="quote"></span>
+          </p>
+          <p id="author"></p>
+          <!-- title and content -->
+          <div class="card--details">
+            <!-- buttons -->
+            <button class="btn">Get Quote</button>
+            <button class="twitter__btn" target="_blank">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p id="api">Powered by
+      <a href="https://talaikis.com/" target="_blank">talaikis.com</a>
+    </p>
+  </div>
+  <div class="footer">
+    <p>by
+      <span>
+        <a href="http://www.raywu.me" target="_blank">Raymond Wu</a>
+      </span>
+    </p>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
