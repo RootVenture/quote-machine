@@ -4,6 +4,9 @@ const author = document.getElementById('author');
 const quote = document.getElementById('quote');
 let quoteData;
 let textToTweet;
+const endpoint = 'https://talaikis.com/api/quotes/random/';
+
+// 'https://api.whatdoestrumpthink.com/api/v1/quotes/random'
 
 // create our random background color:
 function randomColor() {
@@ -17,12 +20,13 @@ function randomColor() {
 
 // pull quote from API
 function getQuotePromise() {
-  fetch('https://talaikis.com/api/quotes/random/', {
+  fetch(endpoint, {
     method: 'get',
   })
     .then(data => data.json())
     .then(data => {
-      quoteData = data;
+      setQuote(data);
+      randomColor();
     })
     .catch(err => {
       console.error(err);
@@ -41,20 +45,18 @@ twitterBtn.addEventListener('click', () => {
     author.textContent
   }`;
   const twtURI = encodeURIComponent(textToTweet);
-  const tweetLink = `http://twitter.com/home?status=${twtURI}`;
-  window.open(tweetLink, '_blank');
+  const twtURL = `https://twitter.com/share?text=${twtURI}`;
+  twitterBtn.setAttribute('href', `http://twitter.com/home?status=${twtURI}`);
+  window.open(twtURL, '_blank');
 });
 
 // random quote generator event listener:
 quoteBtn.addEventListener('click', async () => {
   await getQuotePromise();
-  setQuote(quoteData);
   randomColor();
 });
 
 // Vanilla JS equivalent of document.ready
-document.addEventListener('DOMContentLoaded', async () => {
-  await getQuotePromise();
-  setQuote(quoteData);
-  randomColor();
+document.addEventListener('DOMContentLoaded', () => {
+  getQuotePromise();
 });
